@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Number Guessing Game</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+
+<body>
+
+  <!-- 🔝 NAVBAR -->
+  <nav>
+    <a href="/">Home</a>
+    <a target="_blank" href="https://www.linkedin.com/in/vishesh-khanna-210361252">Linkedin</a>
+  </nav>
+
+  <!-- 🎯 DIFFICULTY SCREEN -->
+  <div id="difficultyScreen">
+    <h1>Select Difficulty</h1>
+
+    <div class="difficulty-buttons">
+      <button id="easy">Easy (1-50)</button>
+      <button id="medium">Medium (1-100)</button>
+      <button id="hard">Hard (1-500)</button>
+    </div>
+  </div>
+
+  <!-- 🎮 GAME SCREEN -->
+  <div id="gameScreen" class="center hidden"> <!-- HIDDEN BY DEFAULT -->
+
+    <div id="wrapper">
+
+      <h1>Number Guessing Game</h1>
+
+      <p>Guess between <span id="rangeText">1-100</span></p>
+
+      <!-- ⏱ TIMER -->
+      <p>⏱ Time Left: <span id="timer">30</span>s</p>
+
+      <!-- 🔢 FORM -->
+      <form id="guessForm">
+        <input 
+          type="number" 
+          id="guessField" 
+          placeholder="Enter number"
+          autocomplete="off"
+        />
+
+        <input 
+          type="submit" 
+          id="subt" 
+          value="Submit Guess"
+        />
+      </form>
+
+      <!-- 📊 RESULT -->
+      <p>Previous: <span class="guesses"></span></p>
+      <p>Remaining: <span class="lastResult">10</span></p>
+      <p class="lowOrHi"></p>
+
+      <!-- 🔄 RESTART -->
+      <button id="resetBtn">🔄 Restart</button>
+
+    </div>
+  </div>
+
+  <!-- 🔊 SOUNDS -->
+  <audio id="clickSound" src="./sounds/click.mp3"></audio>
+  <audio id="winSound" src="./sounds/win.mp3"></audio>
+  <audio id="loseSound" src="./sounds/fail.mp3"></audio>
+
+  <!-- JS -->
+  <script src="guess.js"></script>
+
+</body>
+</html>
